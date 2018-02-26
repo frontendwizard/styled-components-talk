@@ -1,0 +1,21 @@
+.todo-item {
+  color: #000
+}
+.todo-item--small {
+  font-size: 80%
+}
+.todo-item__mark::before {
+  content: '*'
+}
+.todo-item.is-complete {
+  color: #aaa
+}
+.todo-item.is-complete .todo-item__mark::before {
+  content: '✔'
+}
+.todo-item.is-complete .todo-item__name {
+  text-decoration: line-through
+}
+.todo-item.is-due .todo-item__name {
+  color: red
+}
