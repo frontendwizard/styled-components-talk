@@ -19,11 +19,11 @@ require('normalize.css')
 
 const theme = createTheme(
   {
-    primary: '#FFFFFF',
-    secondary: '#000000',
-    tertiary: '#26ADE4',
-    quaternary: '#4DBCE9',
-    quinary: '#D1E751'
+    primary: '#264653',
+    secondary: '#2A9D8F',
+    tertiary: '#50FFB1',
+    quaternary: '#65AFFF',
+    quinary: '#04151F'
   },
   {
     primary: 'Montserrat',

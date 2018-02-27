@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import {
   Slide,
@@ -7,7 +8,8 @@ import {
   Text,
   Appear,
   List,
-  ListItem
+  ListItem,
+  ComponentPlayground
 } from 'spectacle'
 import CodeSlide from 'spectacle-code-slide'
 
@@ -21,8 +23,8 @@ export default (
       <Heading size={6}>&lt; 💅 &gt;</Heading>
     </Slide>
     <Slide transition={['fade']}>
-      <Text><Code textSize={30}>npm install --save styled-components</Code></Text>
-      <Text><Code textSize={30}>yarn add styled-components</Code></Text>
+      <Text textColor="white"><Code textSize={30}>npm install --save styled-components</Code></Text>
+      <Text textColor="white"><Code textSize={30}>yarn add styled-components</Code></Text>
     </Slide>
     <CodeSlide
       transition={['fade']}
@@ -38,8 +40,10 @@ export default (
       ]}
     />
     <Slide transition={['fade']}>
-      <Button>Botão</Button>
-      <Button primary>Botão primário</Button>
+      <ComponentPlayground
+        code={require('../examples/example_3.1.raw.js')}
+        scope={{ styled }}
+      />
     </Slide>
     <CodeSlide
       transition={['fade']}
