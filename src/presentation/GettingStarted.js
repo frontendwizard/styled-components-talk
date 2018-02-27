@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import {
   Slide,
@@ -12,8 +12,6 @@ import {
   ComponentPlayground
 } from 'spectacle'
 import CodeSlide from 'spectacle-code-slide'
-
-import Button from '../examples/example_3'
 
 export default (
   <div hasSlideChildren>
@@ -78,11 +76,16 @@ export default (
       ranges={[
         {loc: [0, 0], title: 'Styled To Do'},
         {loc: [1, 2]},
-        {loc: [3, 9]},
-        {loc: [10, 14]},
-        {loc: [15, 21]},
+        {loc: [3, 16]},
+        {loc: [17, 23]},
       ]}
     />
+    <Slide transition={['fade']}>
+      <ComponentPlayground
+        code={require('../examples/example_2.1.raw.js')}
+        scope={{ styled, css }}
+      />
+    </Slide>
     <Slide transition={['fade']}>
       <Heading caps fit>Diferenças</Heading>
       <List>

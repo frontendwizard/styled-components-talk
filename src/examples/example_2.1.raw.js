@@ -1,5 +1,5 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
+// import React from 'react'
+// import styled, { css } from 'styled-components'
 
 const Wrapper = styled.div`
   color: #000;
@@ -22,4 +22,13 @@ const TodoItem = ({ name, ...props }) => (
   </Wrapper>
 )
 
-export default TodoItem
+render(
+  <div>
+    <TodoItem name="item" />
+    <TodoItem name="item" complete />
+    <TodoItem name="item" due />
+    <TodoItem name="item" small />
+    <TodoItem name="item" small complete />
+    <TodoItem name="item" small due />
+  </div>
+)
