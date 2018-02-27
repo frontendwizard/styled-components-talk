@@ -1,5 +1,5 @@
 // import React from 'react'
-// import styled, { ThemeProvider } from 'styled-components'
+// import styled from 'styled-components'
 
 const Button = styled.button`
   font-size: 1em;
@@ -10,6 +10,11 @@ const Button = styled.button`
 
   color: ${props => props.theme.main};
   border: 2px solid ${props => props.theme.main};
+
+  ${props => props.block && css`
+    background-color: ${props => props.theme.main};
+    color: #FFF;
+  `}
 `
 
 Button.defaultProps = {
@@ -18,11 +23,15 @@ Button.defaultProps = {
   }
 }
 
+const BigButton = Button.extend`
+  font-size: 150%;
+`
+
 render(
   <div>
     <Button>Default Button</Button>
-    <ThemeProvider theme={{ main: 'royalblue' }}>
-      <Button>Themed</Button>
-    </ThemeProvider>      
+    <Button block>Block Button</Button>
+    <BigButton>Default BigButton</BigButton>
+    <BigButton block>Block BigButton</BigButton>
   </div>
 )

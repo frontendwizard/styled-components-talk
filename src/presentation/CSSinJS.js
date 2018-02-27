@@ -3,9 +3,7 @@ import React from 'react'
 import {
   Slide,
   Heading,
-  Image,
   Appear,
-  CodePane,
   Code,
   BlockQuote,
   Quote,
@@ -14,6 +12,7 @@ import {
   Text
 } from 'spectacle'
 import { Row } from './elements'
+import CodeSlide from 'spectacle-code-slide'
 
 import TodoItem from '../examples/example_1'
 
@@ -23,18 +22,28 @@ export default (
       <Heading fit caps>Porque</Heading>
       <Heading fit caps>CSS-in-JS?</Heading>
     </Slide>
-    <Slide transition={['fade']}>
-      <CodePane
-        lang="javascript"
-        source={require("../examples/example_1.raw.js")}
-      />
-    </Slide>
-    <Slide transition={['fade']}>
-      <CodePane
-        lang="css"
-        source={require("../examples/example_1.raw.css")}
-      />
-    </Slide>
+    <CodeSlide
+      transition={['fade']}
+      lang="jsx"
+      code={require("../examples/example_1.raw.js")}
+      ranges={[
+        {loc: [0, 13], title: "To do Component"},
+        {loc: [4, 10]},
+        {loc: [5, 6]},
+        {loc: [1, 2]},
+      ]}
+    />
+    <CodeSlide
+      transition={['fade']}
+      lang="css"
+      code={require("../examples/example_1.raw.css")}
+      ranges={[
+        {loc: [0, 8], title: "CSS"},
+        {loc: [0, 3]},
+        {loc: [3, 6]},
+        {loc: [6, 7]},
+      ]}
+    />
     <Slide transition={['fade']}>
       <Heading size={6} margin={40}>Que resulta em:</Heading>
       <Appear>
@@ -63,9 +72,7 @@ export default (
       </Appear>
     </Slide>
     <Slide transition={['fade']}>
-      <Heading size={2} margin={40}>Pain points</Heading>
-      <Image src={require("../assets/code_2.png")} />
-      <Image src={require("../assets/code_1.png")} />
+      <Heading fit caps>Problemas</Heading>
     </Slide>
     <Slide transition={['fade']}>
       <Heading>O componente fica separado em duas partes.</Heading>
@@ -76,9 +83,6 @@ export default (
     </Slide>
     <Slide transition={['fade']}>
       <Heading>Se não vamos reutilizar o CSS, porque criar classes?</Heading>
-    </Slide>
-    <Slide transition={['fade']}>
-      <Heading>React Native</Heading>
     </Slide>
     <Slide transition={['fade']}>
       <BlockQuote>

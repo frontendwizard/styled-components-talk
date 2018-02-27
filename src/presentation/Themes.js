@@ -1,12 +1,11 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider, css } from 'styled-components'
 
 import {
   Slide,
   Heading,
-  CodePane
+  ComponentPlayground
 } from 'spectacle'
-import Button from '../examples/example_5'
 
 export default (
   <div hasSlideChildren>
@@ -18,21 +17,18 @@ export default (
       <Heading caps fit>Temas</Heading>
     </Slide>
     <Slide transition={['fade']}>
-      <CodePane
-        lang="javascript"
-        source={require("../examples/example_6.raw.js")}
+      <ComponentPlayground
+        code={require("../examples/example_6.raw.js")}
+        scope={{ styled, ThemeProvider }}
       />
-      <div>
-        <Button>Default Button</Button>
-        <ThemeProvider theme={{ main: 'royalblue' }}>
-          <Button>Themed</Button>
-        </ThemeProvider>      
-      </div>
     </Slide>
     <Slide transition={['fade']}>
-      <CodePane
-        lang="javascript"
-        source={require("../examples/example_5.raw.js")}
+      <Heading caps fit>Extend</Heading>
+    </Slide>
+    <Slide transition={['fade']}>
+      <ComponentPlayground
+        code={require("../examples/example_8.raw.js")}
+        scope={{ styled, css }}
       />
     </Slide>
   </div>

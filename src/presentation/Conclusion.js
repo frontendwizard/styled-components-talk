@@ -14,7 +14,7 @@ export default (
     <Slide transition={['fade']}>
       <Heading caps fit>styled-components</Heading>
       <Heading caps fit>facilita muito a criação de componentes de UI</Heading>
-      <Heading caps fit>reutilizáveis em nossos apps.</Heading>
+      <Heading caps fit>reutilizáveis em apps.</Heading>
     </Slide>
     <Slide transition={['fade']}>
       <Heading caps fit>faz parte do standard na Getty/IO</Heading>

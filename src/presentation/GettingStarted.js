@@ -5,11 +5,11 @@ import {
   Heading,
   Code,
   Text,
-  CodePane,
   Appear,
   List,
   ListItem
 } from 'spectacle'
+import CodeSlide from 'spectacle-code-slide'
 
 import Button from '../examples/example_3'
 
@@ -24,39 +24,61 @@ export default (
       <Text><Code textSize={30}>npm install --save styled-components</Code></Text>
       <Text><Code textSize={30}>yarn add styled-components</Code></Text>
     </Slide>
-    <Slide transition={['fade']}>
-      <CodePane
-        lang="javascript"
-        source={require("../examples/example_3.raw.js")}
-      />
-    </Slide>
+    <CodeSlide
+      transition={['fade']}
+      lang="js"
+      code={require("../examples/example_3.raw.js")}
+      ranges={[
+        {loc: [0, 20], title: 'Botão'},
+        {loc: [0, 1]},
+        {loc: [2, 3]},
+        {loc: [3, 9]},
+        {loc: [10, 12]},
+        {loc: [13, 17]},
+      ]}
+    />
     <Slide transition={['fade']}>
       <Button>Botão</Button>
       <Button primary>Botão primário</Button>
     </Slide>
-    <Slide transition={['fade']}>
-      <Text fit><Code>styled.button`/* css */`</Code></Text>
-      <Heading size={5}>é uma função que retorna um componente de React de vai renderizar um botão na DOM.</Heading>
-      <Heading size={5}>O uso da crase no javascript ES6 equivale a invocar a função passando uma string como parâmetro.</Heading>
-    </Slide>
+    <CodeSlide
+      transition={['fade']}
+      lang="jsx"
+      code={require("../examples/example_7.raw.js")}
+      ranges={[
+        {loc: [0, 3], title: 'Estilizando componentes'}
+      ]}
+    />
     <Slide transition={['fade']}>
       <Heading>E no React Native?</Heading>
     </Slide>
-    <Slide transition={['fade']}>
-      <CodePane
-        lang="javascript"
-        source={require("../examples/example_4.raw.js")}
-      />
-    </Slide>
+    <CodeSlide
+      transition={['fade']}
+      lang="jsx"
+      code={require("../examples/example_4.raw.js")}
+      ranges={[
+        {loc: [0, 0], title: 'Botão RN'},
+        {loc: [1, 2]},
+        {loc: [3, 11]},
+        {loc: [12, 16]},
+        {loc: [17, 22]},
+      ]}
+    />
     <Slide transition={['fade']}>
       <Heading>Voltando ao to do...</Heading>
     </Slide>
-    <Slide transition={['fade']}>
-      <CodePane
-        lang="javascript"
-        source={require("../examples/example_2.raw.js")}
-      />
-    </Slide>
+    <CodeSlide
+      transition={['fade']}
+      lang="jsx"
+      code={require("../examples/example_2.raw.js")}
+      ranges={[
+        {loc: [0, 0], title: 'Styled To Do'},
+        {loc: [1, 2]},
+        {loc: [3, 9]},
+        {loc: [10, 14]},
+        {loc: [15, 21]},
+      ]}
+    />
     <Slide transition={['fade']}>
       <Heading caps fit>Diferenças</Heading>
       <List>
